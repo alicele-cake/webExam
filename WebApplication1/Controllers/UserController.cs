@@ -14,15 +14,47 @@ namespace WebApplication1.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Music(string name,float num)
+        public ActionResult Music(string name,int num)
         {
-            var r = "";
-            if (num.HasValue)
+            string r = "";
+            
+    
+                if (num==1)
+                {
+                    r = "do";
+                }
+                if (num == 2)
+                {
+                    r = "re";
+                }
+                if (num == 3)
+                {
+                    r = "mi";
+                }
+                if (num == 4)
+                {
+                    r = "fa";
+                }
+                if (num == 5)
+                {
+                    r = "so";
+                }
+                if (num == 6)
+                {
+                    r = "la";
+                }
+                if (num == 7)
+                {
+                    r = "xi";
+                }
+
+            if(num < 0 || num > 8)
             {
-                r = "cc";
+                r = "錯誤";
             }
             ViewBag.Name = name;
             ViewBag.Num = r;
+
             return View();
         }
     }
